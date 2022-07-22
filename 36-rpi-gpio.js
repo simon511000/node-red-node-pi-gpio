@@ -9,12 +9,12 @@ module.exports = function(RED) {
     var gpioCommand = __dirname+'/nrgpio';
     var allOK = true;
 
-    try {
+    /*try {
         execSync(testCommand);
     } catch(err) {
         allOK = false;
         RED.log.warn("rpi-gpio : "+RED._("rpi-gpio.errors.ignorenode"));
-    }
+    }*/
 
     // the magic to make python print stuff immediately
     process.env.PYTHONUNBUFFERED = 1;
@@ -284,6 +284,7 @@ module.exports = function(RED) {
     RED.nodes.registerType("rpi-mouse",PiMouseNode);
 
     function PiKeyboardNode(n) {
+        console.log("MIAORUEZUFRZEIOFZEUR");
         RED.nodes.createNode(this,n);
         var node = this;
 
